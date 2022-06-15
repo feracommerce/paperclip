@@ -298,7 +298,7 @@ namespace :organizations do
 
       # this url pattern can be changed to reflect whatever service you use
       logo_url = "https://s3.amazonaws.com/xxxxx/organizations/#{organization.id}/#{image_original}"
-      organization.logo.attach(io: open(logo_url),
+      organization.logo.attach(io: URI.open(logo_url),
                                    filename: organization.logo_file_name,
                                    content_type: organization.logo_content_type)
     end

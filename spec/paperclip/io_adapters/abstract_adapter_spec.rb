@@ -116,7 +116,7 @@ describe Paperclip::AbstractAdapter do
     end
 
     it "should return a readable file even when linking fails" do
-      src = open(fixture_file("5k.png"), "rb")
+      src = URI.open(fixture_file("5k.png"), "rb")
       expect(subject.send(:copy_to_tempfile, src).read).to eq src.read
     end
   end

@@ -598,8 +598,8 @@ describe 'Paperclip' do
 
         [:thumb, :medium, :large, :original].each do |style|
           begin
-            first_file = open(@dummy.avatar.url(style))
-            second_file = open(@dummy.avatar.url(style))
+            first_file = URI.open(@dummy.avatar.url(style))
+            second_file = URI.open(@dummy.avatar.url(style))
             assert_equal first_file.read, second_file.read
           ensure
             first_file.close if first_file
