@@ -248,7 +248,7 @@ module Paperclip
 
           config[:use_accelerate_endpoint] = use_accelerate_endpoint?
 
-          [:access_key_id, :secret_access_key, :credential_provider, :credentials].each do |opt|
+          [:access_key_id, :secret_access_key, :credential_provider, :credentials, :endpoint].each do |opt|
             config[opt] = s3_credentials[opt] if s3_credentials[opt]
           end
 
